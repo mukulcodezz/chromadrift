@@ -25,7 +25,7 @@ function renderGrid(grid, items) {
       (n) => `
     <figure class="figure collection-card" data-nft-id="${n.id}" data-title="${n.title}" data-artist="${n.artist}" data-family="${n.family}" data-tier="${n.tier_key}" data-img="${n.img}" tabindex="0" role="button" aria-label="View plate ${n.id}, ${n.title}">
       <div class="figure__frame ar-1-1">
-        <img src="${n.img}" alt="Grove — ${n.title}, plate ${n.id}" loading="lazy" decoding="async">
+        <img src="${n.img}" alt="Chromadrift Annex I — ${n.title}, plate ${n.id}" loading="lazy" decoding="async">
       </div>
       <figcaption class="figure__cap">
         <span class="is-mute">Pl. ${n.id}</span>
@@ -93,10 +93,10 @@ function initModal() {
     modal.querySelector("#modal-title").textContent = title;
     modal.querySelector(".nft-modal__score").textContent = `Plate ${nftId} · ${artist}`;
     modal.querySelector("#modal-preview").innerHTML =
-      `<img src="${img}" alt="Grove — ${title}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+      `<img src="${img}" alt="Chromadrift Annex I — ${title}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
     modal.querySelector(".nft-modal__traits").innerHTML = [
       ["Type", FAMILY_LABEL[family] || family],
-      ["Collection", "Grove"],
+      ["Suite", "Annex I · Grove"],
       ["Chain", "Solana"],
       ["Standard", "Metaplex Core"],
     ].map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("");

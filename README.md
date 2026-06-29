@@ -2,7 +2,7 @@
 
 A light, editorial, gallery-catalogue website for a Solana NFT drop. Warm paper, Bodoni Moda display, a single vermilion spot ink — deliberately the opposite of the dark-neon NFT template. Built as a static site: plain HTML, modular CSS, and vanilla ES modules. No build step, no framework.
 
-> Live art: the **Grove** drop is presented through the catalogue. A generative "living plate" (Albers-style colour fields rendered on `<canvas>`) doubles as the signature interaction.
+> Live art: **Annex I — Grove** (fourteen illustrated plates) is indexed in the Chromadrift catalogue. The generative "living plate" (Albers-style colour fields on `<canvas>`) remains the signature interaction for the main edition.
 
 ## Features
 

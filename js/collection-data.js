@@ -79,9 +79,9 @@ export const ROADMAP = [
   {
     phase: "Plate IV",
     title: "The Annex",
-    status: "upcoming",
-    desc: "An invited annex of guest colourists composing within the Chromadrift system. Released as a numbered companion suite.",
-    tags: ["Guest artists", "Companion", "Collab"],
+    status: "active",
+    desc: "Annex I — Grove is live in the catalogue: fourteen companion plates by Grove (scenes and mascot Alfie), indexed alongside the generative edition. Further guest suites to follow.",
+    tags: ["Grove", "Companion", "Annex I"],
   },
 ];
 
@@ -96,7 +96,8 @@ export const TEAM = [
 
 export const FAQ = [
   { q: "What is Chromadrift?", a: "A fixed edition of 4,444 generative colour plates on Solana. Each plate is a single pass through a colour system — composed, numbered, and signed at the moment of minting." },
-  { q: "What does a plate actually look like?", a: "Four nested rectangular fields in a generated palette, in the lineage of Albers' colour studies. No two plates share a palette. Re-roll the living plate on the home page to see the system at work." },
+  { q: "What does a plate actually look like?", a: "The generative edition is four nested rectangular fields in a generated palette, in the lineage of Albers' colour studies — re-roll the living plate on the home page to see the system. The catalogue currently shows Annex I (Grove): illustrated scenes and a mascot, presented in the same plate index." },
+  { q: "What is Annex I — Grove?", a: "The first companion suite in the Chromadrift programme — fourteen plates by Grove (thirteen scenes plus Alfie the mascot), indexed and browsable here while the generative edition prepares to mint." },
   { q: "How much does it cost to mint?", a: "1.5 ◎ SOL per plate, plus standard Solana network fees. One plate per wallet during allowlist; the remainder release publicly thereafter." },
   { q: "What wallet do I need?", a: "Phantom, Solflare, or any Wallet Standard compatible Solana wallet. Connect on the Mint page when the window opens." },
   { q: "When is the mint?", a: "Autumn 2026. The allowlist opens one week prior. Exact block and date are announced to the studio's correspondents first." },
@@ -125,7 +126,7 @@ const GROVE = [
 export const GALLERY_ITEMS = GROVE.map((g, i) => ({
   id: String(g.file === "alfie" ? 1 : parseInt(g.file, 10)).padStart(4, "0"),
   title: g.title,
-  artist: "Grove",
+  artist: "Annex I · Grove",
   family: g.tier,
   tier: g.tier === "mascot" ? "Mascot" : "Drop",
   tier_key: g.tier,
