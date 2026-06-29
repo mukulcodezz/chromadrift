@@ -27,6 +27,9 @@ A light, editorial, gallery-catalogue website for a Solana NFT drop. Warm paper,
 | Curatorial note | `about.html` | Note |
 | The studio | `team.html` | Studio |
 | FAQ | `faq.html` | FAQ |
+| Terms | `terms.html` | (footer) |
+| Privacy | `privacy.html` | (footer) |
+| License | `license.html` | (footer) |
 
 ## Stack
 
@@ -40,6 +43,7 @@ A light, editorial, gallery-catalogue website for a Solana NFT drop. Warm paper,
 ```
 .
 ├── index.html  collection.html  mint.html  roadmap.html  about.html  team.html  faq.html
+├── terms.html  privacy.html  license.html
 ├── css/        variables · base · effects · components · pages · interactions   (→ main.css)
 ├── js/         main · nav · wallet · animations · ui · plate · collection-data · collection-page
 ├── assets/     og-image.svg · images/grove/*          (artwork)

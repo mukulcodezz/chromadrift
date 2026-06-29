@@ -7,4 +7,7 @@
   <url><loc>https://chromadrift.xyz/about.html</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://chromadrift.xyz/team.html</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://chromadrift.xyz/faq.html</loc><lastmod>2026-06-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://chromadrift.xyz/terms.html</loc><lastmod>2026-06-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://chromadrift.xyz/privacy.html</loc><lastmod>2026-06-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://chromadrift.xyz/license.html</loc><lastmod>2026-06-29</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

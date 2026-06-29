@@ -415,5 +415,16 @@
 .studio-photo__cap a { color: var(--spot-deep); }
 .studio-photo__cap a:hover { text-decoration: underline; }
 
+/* ================= LEGAL ================= */
+.legal-prose { max-width: 720px; font-size: 15px; line-height: 1.7; color: var(--ink-soft); }
+.legal-prose h2 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; color: var(--ink); margin: 2.5rem 0 0.75rem; }
+.legal-prose h2:first-of-type { margin-top: 0; }
+.legal-prose p { margin: 0 0 1rem; text-wrap: pretty; }
+.legal-prose ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+.legal-prose li { margin-bottom: 0.35rem; }
+.legal-prose a { color: var(--spot-deep); }
+.legal-prose a:hover { text-decoration: underline; }
+.legal-prose .legal-updated { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--mute); margin: 0 0 2rem; }
+
 /* focus visibility */
 :focus-visible { outline: 2px solid var(--spot); outline-offset: 3px; }
