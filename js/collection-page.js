@@ -1,8 +1,7 @@
 import { GALLERY_ITEMS } from "./collection-data.js";
+import { initPlateImages, bindPlateImage } from "./nft-images.js";
 
 const FAMILY_LABEL = {
-  scene: "Scene",
-  mascot: "Mascot",
   warm: "Warm palette",
   cool: "Cool palette",
   neutral: "Neutral palette",
@@ -17,15 +16,16 @@ export function initCollectionPage() {
   initFilters();
   initSearch();
   initModal();
+  initPlateImages(grid);
 }
 
 function renderGrid(grid, items) {
   grid.innerHTML = items
     .map(
       (n) => `
-    <figure class="figure collection-card" data-nft-id="${n.id}" data-title="${n.title}" data-artist="${n.artist}" data-family="${n.family}" data-tier="${n.tier_key}" data-img="${n.img}" tabindex="0" role="button" aria-label="View plate ${n.id}, ${n.title}">
+    <figure class="figure collection-card" data-nft-id="${n.id}" data-title="${n.title}" data-artist="${n.artist}" data-family="${n.family}" data-tier="${n.tier_key}" tabindex="0" role="button" aria-label="View plate ${n.id}, ${n.title}">
       <div class="figure__frame ar-1-1">
-        <img src="${n.img}" alt="Chromadrift Annex I — ${n.title}, plate ${n.id}" loading="lazy" decoding="async">
+        <img data-plate-id="${n.id}" alt="Plate ${n.id} — ${n.title}" loading="lazy" decoding="async">
       </div>
       <figcaption class="figure__cap">
         <span class="is-mute">Pl. ${n.id}</span>
@@ -89,14 +89,16 @@ function initModal() {
   }
 
   const open = (card) => {
-    const { nftId, title, artist, family, img } = card.dataset;
+    const { nftId, title, artist, family } = card.dataset;
     modal.querySelector("#modal-title").textContent = title;
     modal.querySelector(".nft-modal__score").textContent = `Plate ${nftId} · ${artist}`;
     modal.querySelector("#modal-preview").innerHTML =
-      `<img src="${img}" alt="Chromadrift Annex I — ${title}" style="width:100%;height:100%;object-fit:cover;display:block;">`;
+      `<div class="figure__frame ar-1-1"><img data-plate-id="${nftId}" alt="Plate ${nftId} — ${title}"></div>`;
+    const img = modal.querySelector("#modal-preview img");
+    bindPlateImage(img, nftId);
     modal.querySelector(".nft-modal__traits").innerHTML = [
-      ["Type", FAMILY_LABEL[family] || family],
-      ["Suite", "Annex I · Grove"],
+      ["Palette", FAMILY_LABEL[family] || family],
+      ["Fields", "Four nested rectangles"],
       ["Chain", "Solana"],
       ["Standard", "Metaplex Core"],
     ].map(([k, v]) => `<li><span>${k}</span><span>${v}</span></li>`).join("");

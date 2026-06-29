@@ -10,30 +10,10 @@
  *   data-seed="<n>"             -> deterministic palette (stable across reloads)
  */
 
+import { makePalette, mulberry32, paintFields } from "./plate-core.js";
+
 const REGISTRY = new Set();
 let resizeBound = false;
-
-function mulberry32(a) {
-  return function () {
-    a |= 0; a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function makePalette(rand, chroma) {
-  const baseH = rand() * 360;
-  const spread = 16 + rand() * 42;
-  const dir = rand() < 0.5 ? 1 : -1;
-  const Ls = [0.89, 0.74, 0.59, 0.45];
-  if (rand() < 0.5) Ls.reverse();
-  return Ls.map((L, i) => {
-    const h = baseH + dir * spread * (i / 3);
-    const c = chroma * (0.65 + 0.55 * rand());
-    return `oklch(${L.toFixed(3)} ${c.toFixed(3)} ${(((h % 360) + 360) % 360).toFixed(1)})`;
-  });
-}
 
 function paint(plate) {
   const c = plate.canvas;
@@ -44,18 +24,7 @@ function paint(plate) {
   c.height = Math.round(rect.height * dpr);
   const ctx = c.getContext("2d");
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const W = rect.width, H = rect.height;
-  const cols = plate.cols;
-  ctx.fillStyle = cols[0];
-  ctx.fillRect(0, 0, W, H);
-  const u = Math.min(W, H) * 0.092;
-  for (let k = 1; k < 4; k++) {
-    const x = u * k, y = u * k;
-    const w = Math.max(0, W - 2 * u * k);
-    const h = Math.max(0, H - 3 * u * k);
-    ctx.fillStyle = cols[k];
-    ctx.fillRect(x, y, w, h);
-  }
+  paintFields(ctx, rect.width, rect.height, plate.cols);
 }
 
 function reroll(plate) {

@@ -4,6 +4,7 @@ import { initMotion } from "./animations.js";
 import { initChrome } from "./ui.js";
 import { initPlates } from "./plate.js";
 import { initCollectionPage } from "./collection-page.js";
+import { initPlateImages } from "./nft-images.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initChrome();
@@ -11,10 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveNavLink();
   initWalletUI();
   initMotion();
-  // Register before initCollectionPage(): renderGrid dispatches
-  // "collection:rendered" synchronously, so the listener must exist first.
-  document.addEventListener("collection:rendered", () => initPlates());
+  document.addEventListener("collection:rendered", () => initPlateImages());
   initPlates();
+  initPlateImages();
   initCollectionPage();
   initAccordion();
   initMintPage();

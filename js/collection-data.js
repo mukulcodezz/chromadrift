@@ -30,14 +30,14 @@ export const NOTE = {
     "No two plates share a palette. Each is composed, numbered, and signed at the moment of minting — then left exactly as it fell.",
 };
 
-/* Featured plates shown in the catalogue, mirroring the imported design. */
+/* Featured plates shown on the index, mirroring the imported design. */
 export const FEATURED = [
-  { no: "0007", title: "Interval", artist: "M. Okonkwo", dim: "2400×3000", ar: "4-5", col: "a" },
-  { no: "0142", title: "Quiet Adjacency", artist: "L. Vahl", dim: "3000×2000", ar: "3-2", col: "b" },
-  { no: "0291", title: "Warm Over Cool", artist: "I. Tanaka", dim: "2600×2600", ar: "1-1", col: "c" },
-  { no: "0488", title: "Recto", artist: "C. Mercer", dim: "2400×3000", ar: "4-5", col: "d" },
-  { no: "0654", title: "Untitled (Drift)", artist: "T. Ferro", dim: "2200×2933", ar: "3-4", col: "e" },
-  { no: "0810", title: "Field, Folded", artist: "H. Roy", dim: "3200×2000", ar: "16-10", col: "f" },
+  { no: "0007", title: "Interval", artist: "M. Okonkwo", dim: "2400×3000", ar: "4-5", col: "a", seed: 7, chroma: "0.11", family: "warm" },
+  { no: "0142", title: "Quiet Adjacency", artist: "L. Vahl", dim: "3000×2000", ar: "3-2", col: "b", seed: 142, chroma: "0.10", family: "cool" },
+  { no: "0291", title: "Warm Over Cool", artist: "I. Tanaka", dim: "2600×2600", ar: "1-1", col: "c", seed: 291, chroma: "0.12", family: "split" },
+  { no: "0488", title: "Recto", artist: "C. Mercer", dim: "2400×3000", ar: "4-5", col: "d", seed: 488, chroma: "0.09", family: "neutral" },
+  { no: "0654", title: "Untitled (Drift)", artist: "T. Ferro", dim: "2200×2933", ar: "3-4", col: "e", seed: 654, chroma: "0.11", family: "warm" },
+  { no: "0810", title: "Field, Folded", artist: "H. Roy", dim: "3200×2000", ar: "16-10", col: "f", seed: 810, chroma: "0.10", family: "mono" },
 ];
 
 export const TRAITS = [
@@ -79,9 +79,9 @@ export const ROADMAP = [
   {
     phase: "Plate IV",
     title: "The Annex",
-    status: "active",
-    desc: "Annex I — Grove is live in the catalogue: fourteen companion plates by Grove (scenes and mascot Alfie), indexed alongside the generative edition. Further guest suites to follow.",
-    tags: ["Grove", "Companion", "Annex I"],
+    status: "upcoming",
+    desc: "An invited annex of guest colourists composing within the Chromadrift system. Released as a numbered companion suite.",
+    tags: ["Guest artists", "Companion", "Collab"],
   },
 ];
 
@@ -96,8 +96,7 @@ export const TEAM = [
 
 export const FAQ = [
   { q: "What is Chromadrift?", a: "A fixed edition of 4,444 generative colour plates on Solana. Each plate is a single pass through a colour system — composed, numbered, and signed at the moment of minting." },
-  { q: "What does a plate actually look like?", a: "The generative edition is four nested rectangular fields in a generated palette, in the lineage of Albers' colour studies — re-roll the living plate on the home page to see the system. The catalogue currently shows Annex I (Grove): illustrated scenes and a mascot, presented in the same plate index." },
-  { q: "What is Annex I — Grove?", a: "The first companion suite in the Chromadrift programme — fourteen plates by Grove (thirteen scenes plus Alfie the mascot), indexed and browsable here while the generative edition prepares to mint." },
+  { q: "What does a plate actually look like?", a: "Four nested rectangular fields in a generated palette, in the lineage of Albers' colour studies. No two plates share a palette. Re-roll the living plate on the home page to see the system at work." },
   { q: "How much does it cost to mint?", a: "1.5 ◎ SOL per plate, plus standard Solana network fees. One plate per wallet during allowlist; the remainder release publicly thereafter." },
   { q: "What wallet do I need?", a: "Phantom, Solflare, or any Wallet Standard compatible Solana wallet. Connect on the Mint page when the window opens." },
   { q: "When is the mint?", a: "Autumn 2026. The allowlist opens one week prior. Exact block and date are announced to the studio's correspondents first." },
@@ -105,30 +104,30 @@ export const FAQ = [
   { q: "Is this financial advice?", a: "No. Chromadrift is a digital art edition. Acquire it because you want the plate." },
 ];
 
-/* Catalogue items — the Grove drop. Real artwork, presented as plates. */
-const GROVE = [
-  { file: "32", title: "First Light", tier: "scene" },
-  { file: "11", title: "Late Shift", tier: "scene" },
-  { file: "26", title: "Adrift", tier: "scene" },
-  { file: "12", title: "Slow Morning", tier: "scene" },
-  { file: "28", title: "The Long Way", tier: "scene" },
-  { file: "27", title: "Coin Toss", tier: "scene" },
-  { file: "13", title: "Night Walk", tier: "scene" },
-  { file: "29", title: "High Noon", tier: "scene" },
-  { file: "14", title: "Quiet Hours", tier: "scene" },
-  { file: "25", title: "Deep End", tier: "scene" },
-  { file: "15", title: "Off Grid", tier: "scene" },
-  { file: "30", title: "Last Call", tier: "scene" },
-  { file: "16", title: "Homebound", tier: "scene" },
-  { file: "alfie", title: "Alfie", tier: "mascot" },
+/* Catalogue sample — generative plates with fixed seeds for the grid. */
+const CATALOGUE = [
+  ...FEATURED,
+  { no: "0103", title: "Cool Interval", artist: "M. Okonkwo", seed: 103, chroma: "0.10", family: "cool" },
+  { no: "0188", title: "Split Field", artist: "I. Tanaka", seed: 188, chroma: "0.11", family: "split" },
+  { no: "0234", title: "Neutral Run", artist: "C. Mercer", seed: 234, chroma: "0.09", family: "neutral" },
+  { no: "0312", title: "Near Mono", artist: "L. Vahl", seed: 312, chroma: "0.08", family: "mono" },
+  { no: "0399", title: "Warm Proof", artist: "H. Roy", seed: 399, chroma: "0.12", family: "warm" },
+  { no: "0511", title: "Wide Interval", artist: "T. Ferro", seed: 511, chroma: "0.10", family: "cool" },
+  { no: "0602", title: "Adjacency II", artist: "M. Okonkwo", seed: 602, chroma: "0.11", family: "split" },
+  { no: "0720", title: "Value Study", artist: "I. Tanaka", seed: 720, chroma: "0.09", family: "neutral" },
+  { no: "0888", title: "Drift (Mono)", artist: "L. Vahl", seed: 888, chroma: "0.08", family: "mono" },
+  { no: "1204", title: "Plate Proof", artist: "C. Mercer", seed: 1204, chroma: "0.11", family: "warm" },
+  { no: "1566", title: "Even Fields", artist: "H. Roy", seed: 1566, chroma: "0.10", family: "cool" },
+  { no: "2001", title: "Late Chroma", artist: "T. Ferro", seed: 2001, chroma: "0.12", family: "split" },
 ];
 
-export const GALLERY_ITEMS = GROVE.map((g, i) => ({
-  id: String(g.file === "alfie" ? 1 : parseInt(g.file, 10)).padStart(4, "0"),
-  title: g.title,
-  artist: "Annex I · Grove",
-  family: g.tier,
-  tier: g.tier === "mascot" ? "Mascot" : "Drop",
-  tier_key: g.tier,
-  img: `assets/images/grove/${g.file}.webp`,
+export const GALLERY_ITEMS = CATALOGUE.map((p) => ({
+  id: p.no,
+  title: p.title,
+  artist: p.artist,
+  family: p.family,
+  family_label: p.family.charAt(0).toUpperCase() + p.family.slice(1),
+  tier_key: p.family,
+  seed: p.seed,
+  chroma: p.chroma,
 }));

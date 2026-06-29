@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Catalogue — CHROMADRIFT Colour Plates</title>
-  <meta name="description" content="Browse the Chromadrift catalogue. Annex I — Grove: fourteen scenes and a mascot, indexed in plate format. Filter by type and search by number or title.">
+  <meta name="description" content="Browse the Chromadrift catalogue raisonné. Filter generative colour plates by palette family and search by number or title.">
   <link rel="canonical" href="https://chromadrift.xyz/collection.html">
   <meta name="theme-color" content="#f4f1ea">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CHROMADRIFT">
   <meta property="og:title" content="The Catalogue — CHROMADRIFT">
-  <meta property="og:description" content="Annex I — Grove in the Chromadrift catalogue. Fourteen plates, searchable and filterable.">
+  <meta property="og:description" content="Browse generative colour plates by palette family in the Chromadrift catalogue.">
   <meta property="og:url" content="https://chromadrift.xyz/collection.html">
   <meta property="og:image" content="https://chromadrift.xyz/assets/og-image.svg">
   <meta name="twitter:card" content="summary_large_image">
@@ -53,15 +53,18 @@
       <header class="page-head reveal">
         <div class="sec-mark"><span>§ — The Catalogue</span></div>
         <h1 class="page-head__title">Plates</h1>
-        <p class="page-head__lead">Annex I — Grove, indexed in the Chromadrift catalogue. Thirteen scenes and Alfie the mascot. Click any plate to open it; search by number or title.</p>
+        <p class="page-head__lead">Generative colour plates, indexed as a catalogue. Click any plate to open it. Search by number, title, or colourist.</p>
       </header>
 
       <section class="section" style="padding-top:clamp(40px,5vw,64px);">
-        <input type="search" class="collection-search reveal" data-collection-search placeholder="Search 0011, late shift, alfie…" aria-label="Search the catalogue">
+        <input type="search" class="collection-search reveal" data-collection-search placeholder="Search 0142, interval, okonkwo…" aria-label="Search the catalogue">
         <div class="collection-filters reveal">
           <button type="button" class="filter-pill is-active" data-filter-pill="all">All</button>
-          <button type="button" class="filter-pill" data-filter-pill="scene">Scenes</button>
-          <button type="button" class="filter-pill" data-filter-pill="mascot">Mascot</button>
+          <button type="button" class="filter-pill" data-filter-pill="warm">Warm</button>
+          <button type="button" class="filter-pill" data-filter-pill="cool">Cool</button>
+          <button type="button" class="filter-pill" data-filter-pill="neutral">Neutral</button>
+          <button type="button" class="filter-pill" data-filter-pill="split">Split</button>
+          <button type="button" class="filter-pill" data-filter-pill="mono">Mono</button>
         </div>
         <div class="collection-grid" id="collection-grid"></div>
       </section>

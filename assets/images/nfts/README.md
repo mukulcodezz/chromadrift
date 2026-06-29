@@ -1,25 +1,22 @@
-# Drop your NFT renders here
+# Baked colour plates
 
-## Naming
+Static plate art for the catalogue and home gallery. Generated from the same OKLCH palette engine as the living plate (`js/plate-core.js`).
 
-Use zero-padded IDs matching the collection:
+## Regenerate
 
+```bash
+npm install sharp
+node scripts/bake-plates.mjs
 ```
-0042.webp
-0001.png
-3333.jpg
-```
 
-Supported: `.webp`, `.png`, `.jpg`, `.jpeg`
+Writes `assets/images/nfts/{id}.webp` (and `.svg` source). IDs are zero-padded four digits (`0007.webp`, `0142.webp`, …).
 
-## Behavior
+## Manual drops
 
-- If a file exists, the site uses it automatically.
-- If not, a seeded placeholder image shows until you add art.
-- Hero slot: `assets/images/nfts/0042.webp` (or change `data-nft-id` on index.html)
+You can replace any file with your own render — keep the same filename and the site picks it up automatically.
 
 ## Recommended export
 
-- **Size:** 1024x1024 minimum
-- **Format:** WebP for performance
-- **Naming:** 4-digit zero-padded token ID
+- **Size:** 1024×1024 minimum
+- **Format:** WebP
+- **Naming:** 4-digit plate ID matching `js/collection-data.js`

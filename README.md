@@ -2,7 +2,7 @@
 
 A light, editorial, gallery-catalogue website for a Solana NFT drop. Warm paper, Bodoni Moda display, a single vermilion spot ink — deliberately the opposite of the dark-neon NFT template. Built as a static site: plain HTML, modular CSS, and vanilla ES modules. No build step, no framework.
 
-> Live art: **Annex I — Grove** (fourteen illustrated plates) is indexed in the Chromadrift catalogue. The generative "living plate" (Albers-style colour fields on `<canvas>`) remains the signature interaction for the main edition.
+> Catalogue plates are baked to `assets/images/nfts/{id}.webp` from the generative colour engine. Re-bake with `node scripts/bake-plates.mjs`. The living plate on the index stays live `<canvas>`.
 
 ## Features
 
@@ -46,7 +46,8 @@ A light, editorial, gallery-catalogue website for a Solana NFT drop. Warm paper,
 ├── terms.html  privacy.html  license.html
 ├── css/        variables · base · effects · components · pages · interactions   (→ main.css)
 ├── js/         main · nav · wallet · animations · ui · plate · collection-data · collection-page
-├── assets/     og-image.svg · images/grove/*          (artwork)
+├── assets/     og-image.svg · images/nfts/*.webp   (baked plate art)
+├── scripts/    bake-plates.mjs                     (regenerate NFT images)
 ├── docs/       research/  plans/                       (competitor + inspiration reports)
 ├── sitemap.xml  robots.txt  netlify.toml  vercel.json
 └── .env.example                                        (Firecrawl key → .env.local, gitignored)
@@ -80,4 +81,4 @@ vercel --prod
 
 ## License
 
-Code: MIT. Artwork (`assets/images/grove/`) © its owner — not covered by the code license.
+Code: MIT. Generative plate artwork © Studio Chromadrift — not covered by the code license.
