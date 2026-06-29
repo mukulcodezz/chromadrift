@@ -37,7 +37,7 @@
 /* ================= CURATORIAL NOTE ================= */
 .curatorial { align-items: start; }
 .curatorial__note { grid-column: 1 / 4; align-self: start; }
-.curatorial__credit { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; line-height: 1.9; color: var(--mute); margin: 24px 0 0; }
+.curatorial__credit { font-family: var(--font-mono); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; line-height: 1.9; color: var(--mute); margin: 24px 0 0; }
 .curatorial__body { grid-column: 5 / 12; }
 .curatorial__body p + p { margin-top: 30px; }
 
